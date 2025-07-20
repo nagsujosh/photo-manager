@@ -247,13 +247,6 @@ python run_app.py
 ## 📝 License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-- **Documentation**: See [ARCHITECTURE.md](ARCHITECTURE.md) for technical details
-- **Issues**: Report bugs and feature requests on GitHub
-- **Discussions**: Join our community discussions for help and ideas
-
 ---
 
-**Built with ❤️ **
+**Built with ❤️**
