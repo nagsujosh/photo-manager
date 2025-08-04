@@ -1,0 +1,90 @@
+# =============================================================================
+# Photo Manager
+# =============================================================================
+# Copy this content to a new file named .env and customize the values
+# Make sure to add .env to your .gitignore file to keep secrets secure!
+
+# =============================================================================
+# DATABASE CONFIGURATION
+# =============================================================================
+# PostgreSQL connection string
+# Format: postgresql://username:password@host:port/database?options
+DATABASE_URL=postgresql://username:password@host:port/database_name?sslmode=require
+
+# For local PostgreSQL database, use:
+# DATABASE_URL=postgresql://username:password@localhost:5432/semantic_gallery
+
+# For SQLite (development only), use:
+# DATABASE_URL=sqlite:///./semantic_gallery.db
+
+# =============================================================================
+# OCR CONFIGURATION
+# =============================================================================
+# Path to Tesseract OCR executable
+# macOS with Homebrew: /opt/homebrew/bin/tesseract
+# macOS with MacPorts: /opt/local/bin/tesseract  
+# Linux (Ubuntu/Debian): /usr/bin/tesseract
+# Windows: C:/Program Files/Tesseract-OCR/tesseract.exe
+TESSERACT_CMD=/opt/homebrew/bin/tesseract
+
+# =============================================================================
+# AI MODEL CONFIGURATION
+# =============================================================================
+# Image captioning model from Hugging Face
+CAPTION_MODEL_NAME=vikhyatk/moondream2
+CAPTION_MODEL_REVISION=2025-03-27
+
+# Text embedding model for semantic search
+EMBEDDING_MODEL_NAME=all-MiniLM-L6-v2
+
+# =============================================================================
+# SEARCH & SIMILARITY CONFIGURATION
+# =============================================================================
+# Default similarity threshold for search results (0.0 to 1.0)
+SIMILARITY_THRESHOLD=0.5
+
+# Weights for combining different similarity scores (should sum to 1.0)
+AI_WEIGHT=0.4       # Weight for AI-generated captions
+MANUAL_WEIGHT=0.3   # Weight for manual labels
+OCR_WEIGHT=0.3      # Weight for OCR extracted text
+
+# =============================================================================
+# IMAGE PROCESSING CONFIGURATION
+# =============================================================================
+# Maximum file size for uploaded images (in bytes)
+# 10MB = 10485760, 5MB = 5242880, 20MB = 20971520
+MAX_IMAGE_SIZE=10485760
+
+# =============================================================================
+# PERFORMANCE CONFIGURATION
+# =============================================================================
+# Number of images to process in parallel batches
+BATCH_SIZE=10
+
+# Maximum number of concurrent upload processes
+MAX_CONCURRENT_UPLOADS=3
+
+# =============================================================================
+# DEVELOPMENT & DEBUGGING
+# =============================================================================
+# Set to 'true' to enable SQL query logging (useful for debugging)
+# SQL_DEBUG=false
+
+# Set to 'true' to enable detailed AI model logging
+# AI_DEBUG=false
+
+# =============================================================================
+# OPTIONAL: EXTERNAL SERVICES
+# =============================================================================
+# If you want to use external APIs instead of local models:
+
+# OpenAI API Key (for GPT-based image captioning)
+# OPENAI_API_KEY=your_openai_api_key_here
+
+# Google Cloud Vision API credentials
+# GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
+
+# AWS credentials for Amazon Rekognition
+# AWS_ACCESS_KEY_ID=your_aws_access_key
+# AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+# AWS_DEFAULT_REGION=us-east-1 
